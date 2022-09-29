@@ -9,7 +9,6 @@ function useApi() {
     try {
       const response = await fetch(API);
       const data = await response.json();
-      console.log(data);
       setAllPokemon(data);
     } catch (error) {
       //TODO error handling
@@ -20,6 +19,7 @@ function useApi() {
   useEffect(() => {
     getAllPokemon();
   }, []);
+
 
   return allPokemon;
 }
