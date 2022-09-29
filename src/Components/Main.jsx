@@ -1,15 +1,16 @@
 import useApi from './useApi';
-import PokemonDetail from './PokemonDetail';
+import PokemonCard from './PokemonCard';
 import "./Main.css";
 
 function Main() {
   const pokemons = useApi();
+  const originalPokemons = pokemons.slice(0, 151);
 
   return (
     <section className='pokemon-container'>
-      {pokemons.map(pokemon => {
+      {originalPokemons.map(pokemon => {
         return (
-          <PokemonDetail pokemon={pokemon} key={pokemon.id} />
+          <PokemonCard pokemon={pokemon} key={pokemon.id} />
         )
       })}
     </section>
