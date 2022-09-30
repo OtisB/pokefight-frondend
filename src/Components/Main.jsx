@@ -5,7 +5,7 @@ import "./Main.css";
 
 function Main() {
   const pokemons = useApi();
-  const originalPokemons = pokemons.slice(0, 151);
+  const originalPokemons = pokemons.slice(0, 150);
 
   return (
     <PokemonContainer allPokemons={originalPokemons} />
