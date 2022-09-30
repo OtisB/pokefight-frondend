@@ -1,5 +1,16 @@
-.pokemon-container {
-  display: flex;
+
+.pokemon-list-frame {
+  width: 80%;
+  margin: 20px 10%;
+  height: 510px;
   overflow-y: hidden;
   overflow-x: scroll;
+}
+
+
+.pokemon-container {
+  width: 19800px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
