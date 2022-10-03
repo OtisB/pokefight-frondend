@@ -9,8 +9,16 @@
 
 
 .pokemon-container {
-  width: 19800px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  display: grid;
+  grid-template-rows: 250px 250px;
+  grid-auto-columns: 250px;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.pokemon-container > div:nth-child(2n + 1) { /* this will do the trick*/
+  grid-row: 1;
+}
+.pokemon-container > div:nth-child(2n) { /* this will do the trick*/
+  grid-row: 2;
 }
