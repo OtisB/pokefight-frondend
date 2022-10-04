@@ -1,0 +1,33 @@
+.fighting-area-section {
+  display: flex;
+  margin: 4rem 4rem auto;
+  justify-content: space-evenly;
+  /* border-radius: 10px; */
+  color: red;
+}
+
+.fighting-area-container button {
+  cursor: pointer;
+  padding: 10px 30px;
+  background: transparent;
+  font-weight: bold;
+  color: rgb(63, 81, 181);
+  border: 3px solid rgb(63, 81, 181);
+  border-radius: 5px;
+  margin: 2rem;
+}
+
+.fighting-area-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.fighting-area-container button:hover {
+  background-color: rgb(203, 216, 19);
+}
+
+.fighting-area-container button:active {
+  box-shadow:
+    7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  transform: translateY(4px);
+}
