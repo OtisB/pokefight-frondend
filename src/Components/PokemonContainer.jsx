@@ -9,6 +9,7 @@ function PokemonContainer({ allPokemons }) {
 
 
   return (
+    <div className="pokemon-list-frame">
     <section className='pokemon-container'>
       {allPokemons.map(pokemon => {
         return (
@@ -16,6 +17,7 @@ function PokemonContainer({ allPokemons }) {
         )
       })}
     </section>
+    </div>
   )
 }
 

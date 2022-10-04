@@ -1,5 +1,25 @@
-.pokemon-container {
-  display: flex;
+
+.pokemon-list-frame {
+  width: 80%;
+  margin: 20px 10%;
+  height: 510px;
   overflow-y: hidden;
   overflow-x: scroll;
+}
+
+
+.pokemon-container {
+  display: grid;
+  grid-template-rows: 250px 250px;
+  grid-auto-columns: 250px;
+  column-gap: 10px;
+  row-gap: 10px;
+  width: min-content;
+}
+
+.pokemon-container > div:nth-child(2n + 1) { /* this will do the trick*/
+  grid-row: 1;
+}
+.pokemon-container > div:nth-child(2n) { /* this will do the trick*/
+  grid-row: 2;
 }
