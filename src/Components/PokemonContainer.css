@@ -57,10 +57,10 @@
   width: min-content;
 }
 
-.pokemon-container > div:nth-child(2n + 1) { /* this will do the trick*/
+.pokemon-container > a:nth-child(2n + 1) { /* this will do the trick*/
   grid-row: 1;
 }
-.pokemon-container > div:nth-child(2n) { /* this will do the trick*/
+.pokemon-container > a:nth-child(2n) { /* this will do the trick*/
   grid-row: 2;
 }
 
