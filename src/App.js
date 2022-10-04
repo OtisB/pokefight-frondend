@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import './Glassmorphism.css';
 import Main from "./Components/Main";
 import PokemonDetail from './Components/PokemonDetail';
 

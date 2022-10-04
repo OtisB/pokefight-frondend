@@ -13,23 +13,13 @@ function PokemonContainer({ allPokemons }) {
 
   return (
     <div className="pokemon-list-frame">
-      <section className='pokemon-container'>
-        <div className='upper-row-container'>
-          {upperRow.map(pokemon => {
-            return (
-              <PokemonCard pokemon={pokemon} key={pokemon.id} />
-            )
-          })}
-        </div>
-        <div className='bottom-row-container'>
-          {bottomRow.map(pokemon => {
-            return (
-              <PokemonCard pokemon={pokemon} key={pokemon.id} />
-            )
-          })}
-        </div>
-
-      </section>
+    <section className='pokemon-container'>
+      {allPokemons.map(pokemon => {
+        return (
+          <PokemonCard pokemon={pokemon} key={pokemon.id} />
+        )
+      })}
+    </section>
     </div>
   )
 };
