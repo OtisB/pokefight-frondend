@@ -23,4 +23,4 @@ function PokemonDetail({ pokemon }) {
   )
 }
 
-export default PokemonDetail
+export default PokemonDetail;

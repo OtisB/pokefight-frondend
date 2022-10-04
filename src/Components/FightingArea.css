@@ -1,12 +1,17 @@
 .fighting-area-section {
   display: flex;
-  margin: 4rem 4rem auto;
-  justify-content: space-evenly;
-  /* border-radius: 10px; */
-  color: red;
+  flex-direction: column;
+  margin: 4rem;
+  align-items: center;
 }
 
-.fighting-area-container button {
+.fighting-area-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%
+}
+
+.fighting-area-section button {
   cursor: pointer;
   padding: 10px 30px;
   background: transparent;
@@ -14,19 +19,14 @@
   color: rgb(63, 81, 181);
   border: 3px solid rgb(63, 81, 181);
   border-radius: 5px;
-  margin: 2rem;
+  margin: 4rem;
 }
 
-.fighting-area-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.fighting-area-container button:hover {
+.fighting-area-section button:hover {
   background-color: rgb(203, 216, 19);
 }
 
-.fighting-area-container button:active {
+.fighting-area-section button:active {
   box-shadow:
     7px 6px 28px 1px rgba(0, 0, 0, 0.24);
   transform: translateY(4px);
