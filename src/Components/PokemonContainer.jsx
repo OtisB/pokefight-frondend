@@ -28,7 +28,7 @@ function PokemonContainer({ allPokemons }) {
     </section>
     </div>
     <button onMouseOver={(e) => ScrollInterval(-256)} onMouseOut={(e) => rmvScrollInterval()} id="leftButton">&larr;</button>
-    <button onClick={(e) => ScrollAround(256)} id="rightButton">&rarr;</button>
+    <button onMouseOver={(e) => ScrollInterval(256)} onMouseOut={(e) => rmvScrollInterval()} id="rightButton">&rarr;</button>
     </div>
   )
 };
