@@ -8,7 +8,7 @@ function PokemonDetail() {
   const { id } = useParams();
   const pokemons = useApi();
 
-  const currentPokemon = pokemons.find(pkm => pkm.id == id);
+  const currentPokemon = pokemons.find(pkm => pkm.id === parseInt(id));
 
   console.log(currentPokemon);
 
@@ -16,7 +16,7 @@ function PokemonDetail() {
     <section className='detail-section'>
       <div className="detail-container">
         <button onClick={() => navigate(`/`)}>Choose an other Pokemon</button>
-        {currentPokemon != undefined ? (
+        {currentPokemon !== undefined ? (
           <div className="detail-view-card" key={id}>
             <div className="card-image-container">
               <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`} alt={currentPokemon.name.english} />
