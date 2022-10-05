@@ -12,9 +12,11 @@ function FightingArea() {
   const { id } = useParams();
   const pokemons = useApi();
 
-  const currPkm = pokemons.find(pkm => pkm.id == id);
-  const randomId = Math.floor(Math.random() * pokemons.length);
-  const rdmPkm = pokemons.find(pkm => pkm.id === randomId);
+  const orriginalPkm = pokemons.slice(0, 150);
+
+  const currPkm = orriginalPkm.find(pkm => pkm.id == id);
+  const randomId = Math.floor(Math.random() * orriginalPkm.length);
+  const rdmPkm = orriginalPkm.find(pkm => pkm.id === randomId);
 
   const handleIsFighting = ((event) => {
     event.preventDefault();
