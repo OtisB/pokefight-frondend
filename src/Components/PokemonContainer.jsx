@@ -33,4 +33,4 @@ function PokemonContainer({ allPokemons }) {
   )
 };
 
-export default PokemonContainer
+export default PokemonContainer;
