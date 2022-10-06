@@ -1,0 +1,24 @@
+.App {
+    background-image: url("/Hexagon.png");
+    background-size: cover;
+}
+
+.card-content {
+    background-image: linear-gradient(45deg, rgba(66,60,90,0.4), rgba(66,60,90,0.4));
+}
+
+.pokemon-container, .fighting-area-container {
+    background-image: linear-gradient(45deg, rgba(255,255,255,0.65), rgba(255,255,255,0.65));
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+}
+
+.card-image-container {
+    background: white;
+}
+
+.poke-card:hover {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
