@@ -19,6 +19,7 @@ function FightAnimation({setShowAnimation}) {
         } else {
             document.getElementById('animation').className = 'animated';
         }
+        counter++;
         if (counter > 6) {
             window.clearInterval(wind);
             setShowAnimation(false);
