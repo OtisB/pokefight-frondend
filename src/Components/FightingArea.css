@@ -1,14 +1,16 @@
 .fighting-area-section {
   display: flex;
   flex-direction: column;
-  margin: 4rem;
+  /* margin: 4rem; */
   align-items: center;
 }
 
 .fighting-area-container {
   display: flex;
   justify-content: space-evenly;
-  width: 80%
+  width: 80%;
+  padding: 64px;
+  border-radius: 10px;
 }
 
 .fighting-area-section button {
@@ -16,14 +18,14 @@
   padding: 10px 30px;
   background: transparent;
   font-weight: bold;
-  color: rgb(63, 81, 181);
-  border: 3px solid rgb(63, 81, 181);
+  color: white;
+  border: 3px solid white;
   border-radius: 5px;
   margin: 4rem;
 }
 
 .fighting-area-section button:hover {
-  background-color: rgb(203, 216, 19);
+  background-color: #4aa34a;
 }
 
 .fighting-area-section button:active {

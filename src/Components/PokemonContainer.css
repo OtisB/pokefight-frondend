@@ -22,25 +22,32 @@
 
 ::-webkit-scrollbar-track {
   border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.3);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 ::-webkit-scrollbar-track:hover {
-  border: 1px solid rgb(63, 81, 181);
+  border: 1px solid white;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(203, 216, 19);
+  background-color: #83a6cb;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(203, 216, 19);
-  border: 1px solid rgb(63, 81, 181);
+  background-color: rgb(50, 103, 159);
+  border: 1px solid white;
 }
 .pokemon-list-outer {
   padding: 20px 10%;
   position: relative;
 }
 .pokemon-list-frame {
+  border-radius: 10px;
   overflow-y: hidden;
   overflow-x: scroll;
   scroll-behavior: smooth;
