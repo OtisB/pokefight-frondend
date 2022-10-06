@@ -7,8 +7,9 @@ import './FightingArea.css'
 function FightingArea() {
 
   const [wildPkmApeares, setWildPkmApeares] = useState(false);
-  const [showPlaceholder, setShowPlaceholder] = useState(false);
+  const [showAnimation, setShowAnimation] = useState(false);
   const [showResults, setShowResults] = useState(false);
+  const [rndId, setRndId] = useState(Math.floor(Math.random() * 150));
 
   const navigate = useNavigate();
   const { id } = useParams();
@@ -16,34 +17,41 @@ function FightingArea() {
 
   const originalPkm = pokemons.slice(0, 150);
   const currPkm = originalPkm.find(pkm => pkm.id == id);
-  const randomId = Math.floor(Math.random() * originalPkm.length);
-  const rdmPkm = originalPkm.find(pkm => pkm.id === randomId);
+  const rdmPkm = originalPkm.find(pkm => pkm.id === rndId);
 
-  useEffect(() => {
-    console.log('');
-  }, [showPlaceholder]);
+  // useEffect(() => {
+  //   console.log('');
+  // }, []);
 
   const startDelay = () => {
     setTimeout(() => {
-      console.log('Delaying');
-      setShowPlaceholder(setShowPlaceholder(true));
+      console.log(wildPkmApeares);
+      setShowAnimation(true);
     }, 5000);
   };
 
   const handleWildPkmApeares = ((event) => {
     event.preventDefault();
     startDelay();
-    setWildPkmApeares(setWildPkmApeares(true));  //But why? setWildPkmApeares(setWildPkmApeares(true)); and not setWildPkmApeares(true);
+    if (!wildPkmApeares) {
+      setWildPkmApeares(true);
+    }
   });
+
+  const checkForResults = () => {
+    return showResults ? true : false;
+  }
 
   return (
     <section className='fighting-area-section'>
       <button onClick={() => navigate(`/`)}>Choose an other Pokemon</button>
-      <div className="fighting-area-container">
-        {currPkm ? (<PokemonDetail pokemon={currPkm} />) : <h2>Couldn't find your Pokemon!</h2>}
-        {showPlaceholder ?? <h2>Animation Placeholder</h2>}
-        {wildPkmApeares ?? <PokemonDetail pokemon={rdmPkm} />}
-      </div>
+      {checkForResults() ? (<h2>Results Placeholder</h2>
+      ) : (
+        <div className="fighting-area-container">
+          {currPkm && <PokemonDetail pokemon={currPkm} />}
+          {showAnimation && <h2>Animation Placeholder</h2>}
+          {wildPkmApeares && <PokemonDetail pokemon={rdmPkm} />}
+        </div>)}
       <button disabled={wildPkmApeares === true} onClick={handleWildPkmApeares}>Start fight</button>
     </section>
   )
