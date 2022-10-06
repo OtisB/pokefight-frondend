@@ -21,7 +21,7 @@ function FightAnimation({setShowAnimation}) {
         }
         counter++;
         if (counter > 6) {
-            window.clearInterval(wind);
+            window.clearInterval(animInterval);
             setShowAnimation(false);
         } 
     }
