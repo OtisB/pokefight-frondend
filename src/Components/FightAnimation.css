@@ -1,0 +1,82 @@
+
+
+
+#stern, #stern2, #stern3, #staubwolke, #staubwolke2, #box, #blitz {
+    width: 50px; 
+    height: 50px; 
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-size: 40px 40px !important;
+}
+#box    { 
+    background: #ccc;
+    z-index: 99;
+} 
+#stern { 
+    background: url('img/stern.png') no-repeat left top transparent; 
+    z-index: 12;
+    transition: transform 0.8s ease-in-out, opacity 0.8s linear;
+    transition-delay: 1s;
+}
+#stern2 { 
+    background: url('img/stern.png') no-repeat left top transparent; 
+    z-index: 13;
+    transition: transform 0.6s ease-out, opacity 0.6s linear;
+    transition-delay: 1.7s;
+}
+#stern3 { 
+    background: url('img/stern.png') no-repeat left top transparent; 
+    z-index: 13;
+    transition: transform 0.4s ease-out, opacity 0.4s linear;
+    transition-delay: 2.4s;
+} 
+#staubwolke { 
+    padding-left: -50px;
+    z-index: 1;
+    background: url('img/staubwolke.jpg') no-repeat left top transparent; 
+    -webkit-transition: -webkit-transform 5s ease-in-out, opacity 5s ease-in-out, margin 2s ease-out;
+	transition: transform 5s ease-out, opacity 5s ease-out, margin 2s ease-out;
+}
+#staubwolke2 { 
+    padding-left: -50px;
+    z-index: 2;
+    background: url('img/staubwolke.jpg') no-repeat left top transparent; 
+    -webkit-transition: -webkit-transform 4s ease-in-out, opacity 4s ease-in-out, margin 1.5s ease-out;
+	transition: transform 4s ease-out, opacity 4s ease-out, margin 1.5s ease-out;
+}
+#blitz { 
+    background: url('img/blitz.png') no-repeat left top transparent; 
+    z-index: 105;
+    transition: opacity 0.3s ease-in;
+    transition-delay: 0.1s;
+    visibility: hidden;
+    transform: scale(4);
+} 
+
+.animated #stern   {
+    opacity: 0;
+    transform: scale(1.5) translate(-400px, -50px) rotate(480deg);
+}
+.animated #stern2   {
+    opacity: 0;
+    transform: scale(0.8) translate(-50px, -400px) rotate(700deg);
+}
+.animated #stern3   {
+    opacity: 0;
+    transform: scale(4) translate(-20px, -30px) rotate(200deg);
+}
+.animated #staubwolke   {
+    opacity: 0;
+    transform: scale(4) translate(-50px, -100px);
+}
+.animated #staubwolke2   {
+    opacity: 0;
+    transform: scale(2) translate(50px, -150px);
+}
+.blitzed #blitz   {
+    opacity: 0;
+    visibility: visible;
+}
+
+ 
