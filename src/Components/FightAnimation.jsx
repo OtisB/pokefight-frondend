@@ -1,8 +1,8 @@
-import './FightingArea.css'
+import './FightAnimation.css'
 
-function FightAnimation() {
+function FightAnimation({setShowAnimation}) {
 
-
+    let counter = 0;
     function wind() {
         const direction = Math.random() * 100;
     
@@ -19,10 +19,14 @@ function FightAnimation() {
         } else {
             document.getElementById('animation').className = 'animated';
         }
+        if (counter > 6) {
+            window.clearInterval(wind);
+            setShowAnimation(false);
+        } 
     }
 
     const animInterval = window.setInterval(wind, 800);
-
+    console.log(animInterval);
     return (
 
         <div id="animation">

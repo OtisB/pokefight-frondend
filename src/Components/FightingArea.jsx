@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import useApi from './useApi';
 import PokemonDetail from './PokemonDetail';
+import FightAnimation from './FightAnimation';
 import './FightingArea.css'
 
 function FightingArea() {
@@ -49,7 +50,7 @@ function FightingArea() {
       ) : (
         <div className="fighting-area-container">
           {currPkm && <PokemonDetail pokemon={currPkm} />}
-          {showAnimation && <h2>Animation Placeholder</h2>}
+          {showAnimation && <FightAnimation setShowAnimation={setShowAnimation} />}
           {wildPkmApeares && <PokemonDetail pokemon={rdmPkm} />}
         </div>)}
       <button disabled={wildPkmApeares === true} onClick={handleWildPkmApeares}>Start fight</button>

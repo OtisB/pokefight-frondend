@@ -1,5 +1,14 @@
 
-
+.fighting-area-container    {
+    position: relative;
+}
+#animation {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
 #stern, #stern2, #stern3, #staubwolke, #staubwolke2, #box, #blitz {
     width: 50px; 
@@ -10,23 +19,23 @@
     background-size: 40px 40px !important;
 }
 #box    { 
-    background: #ccc;
+    background: #a9b8ca;
     z-index: 99;
 } 
 #stern { 
-    background: url('img/stern.png') no-repeat left top transparent; 
+    background: url('/public/img/stern.png') no-repeat left top transparent;
     z-index: 12;
     transition: transform 0.8s ease-in-out, opacity 0.8s linear;
     transition-delay: 1s;
 }
 #stern2 { 
-    background: url('img/stern.png') no-repeat left top transparent; 
+    background: url('/public/img/stern.png') no-repeat left top transparent;
     z-index: 13;
     transition: transform 0.6s ease-out, opacity 0.6s linear;
     transition-delay: 1.7s;
 }
 #stern3 { 
-    background: url('img/stern.png') no-repeat left top transparent; 
+    background: url('/public/img/stern.png') no-repeat left top transparent;
     z-index: 13;
     transition: transform 0.4s ease-out, opacity 0.4s linear;
     transition-delay: 2.4s;
@@ -34,19 +43,19 @@
 #staubwolke { 
     padding-left: -50px;
     z-index: 1;
-    background: url('img/staubwolke.jpg') no-repeat left top transparent; 
+    background: url('/public/img/staubwolke.png') no-repeat left top transparent;
     -webkit-transition: -webkit-transform 5s ease-in-out, opacity 5s ease-in-out, margin 2s ease-out;
 	transition: transform 5s ease-out, opacity 5s ease-out, margin 2s ease-out;
 }
 #staubwolke2 { 
     padding-left: -50px;
     z-index: 2;
-    background: url('img/staubwolke.jpg') no-repeat left top transparent; 
+    background: url('/public/img/staubwolke.png') no-repeat left top transparent;
     -webkit-transition: -webkit-transform 4s ease-in-out, opacity 4s ease-in-out, margin 1.5s ease-out;
 	transition: transform 4s ease-out, opacity 4s ease-out, margin 1.5s ease-out;
 }
 #blitz { 
-    background: url('img/blitz.png') no-repeat left top transparent; 
+    background: url('/public/img/blitz.png') no-repeat left top transparent;
     z-index: 105;
     transition: opacity 0.3s ease-in;
     transition-delay: 0.1s;
