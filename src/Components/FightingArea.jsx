@@ -10,6 +10,7 @@ function FightingArea() {
   const [showAnimation, setShowAnimation] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const [rndId, setRndId] = useState(Math.floor(Math.random() * 150));
+  const [winningPkm, setWinningPkm] = useState(null);
 
   const navigate = useNavigate();
   const { id } = useParams();
@@ -19,33 +20,75 @@ function FightingArea() {
   const currPkm = originalPkm.find(pkm => pkm.id == id);
   const rdmPkm = originalPkm.find(pkm => pkm.id === rndId);
 
-  // useEffect(() => {
-  //   console.log('');
-  // }, []);
+  const fight = (attackingPkm, defendingPkm) => {
+    let count = 10;
+    let attackingPkmHp = attackingPkm.base.HP;
+    let defendingPkmHp = defendingPkm.base.HP;
 
-  const startDelay = () => {
+    do {
+      count = count - 1;
+
+      defendingPkmHp = defendingPkmHp - calculateDamage(attackingPkm.base.Attack, defendingPkm.base.Defense);
+      attackingPkmHp = attackingPkmHp - calculateDamage(defendingPkm.base.Attack, attackingPkm.base.Defense);
+
+    } while (count > 0);
+
+    console.log(`${attackingPkm.name.english}`, attackingPkmHp);
+    console.log(`${defendingPkm.name.english}`, defendingPkmHp);
+
+    if (attackingPkmHp > defendingPkmHp) {
+      setWinningPkm(attackingPkm);
+    } else {
+      setWinningPkm(defendingPkm);
+    }
+
+  };
+
+  const calculateDamage = (attack, defense) => {
+    let damage = attack - defense;
+    if (damage < 0) {
+      return 0;
+    }
+    return damage;
+  };
+
+  const determineWinner = () => {
+    if (currPkm.base.Speed > rdmPkm.base.Speed) {
+      fight(currPkm, rdmPkm);
+    } else {
+      fight(rdmPkm, currPkm);
+    }
+  };
+
+  const animationDelay = () => {
     setTimeout(() => {
-      console.log(wildPkmApeares);
       setShowAnimation(true);
+      fightDelay();
+    }, 3000);
+  };
+
+  const fightDelay = () => {
+    setTimeout(() => {
+      determineWinner();
     }, 5000);
   };
 
   const handleWildPkmApeares = ((event) => {
     event.preventDefault();
-    startDelay();
+    animationDelay();
     if (!wildPkmApeares) {
       setWildPkmApeares(true);
     }
   });
 
   const checkForResults = () => {
-    return showResults ? true : false;
+    return winningPkm ? true : false;
   }
 
   return (
     <section className='fighting-area-section'>
       <button onClick={() => navigate(`/`)}>Choose an other Pokemon</button>
-      {checkForResults() ? (<h2>Results Placeholder</h2>
+      {checkForResults() ? (<PokemonDetail pokemon={winningPkm} />
       ) : (
         <div className="fighting-area-container">
           {currPkm && <PokemonDetail pokemon={currPkm} />}
@@ -57,4 +100,4 @@ function FightingArea() {
   )
 }
 
-export default FightingArea
+export default FightingArea;
