@@ -31,3 +31,9 @@
     7px 6px 28px 1px rgba(0, 0, 0, 0.24);
   transform: translateY(4px);
 }
+
+.fighting-area-section button:disabled {
+  color: rgba(63, 81, 181, 25);
+  border: 3px solid rgba(63, 81, 181, 0.5);
+  background-color: transparent;
+}

@@ -6,31 +6,53 @@ import './FightingArea.css'
 
 function FightingArea() {
 
-  const [fightStartet, setFightStartet] = useState(false);
+  const [wildPkmApeares, setWildPkmApeares] = useState(false);
+  const [showAnimation, setShowAnimation] = useState(false);
+  const [showResults, setShowResults] = useState(false);
+  const [rndId, setRndId] = useState(Math.floor(Math.random() * 150));
 
   const navigate = useNavigate();
   const { id } = useParams();
   const pokemons = useApi();
 
   const originalPkm = pokemons.slice(0, 150);
-
   const currPkm = originalPkm.find(pkm => pkm.id == id);
-  const randomId = Math.floor(Math.random() * originalPkm.length);
-  const rdmPkm = originalPkm.find(pkm => pkm.id === randomId);
+  const rdmPkm = originalPkm.find(pkm => pkm.id === rndId);
 
-  const handleFightStartet = ((event) => {
+  // useEffect(() => {
+  //   console.log('');
+  // }, []);
+
+  const startDelay = () => {
+    setTimeout(() => {
+      console.log(wildPkmApeares);
+      setShowAnimation(true);
+    }, 5000);
+  };
+
+  const handleWildPkmApeares = ((event) => {
     event.preventDefault();
-    setFightStartet(setFightStartet(true));
+    startDelay();
+    if (!wildPkmApeares) {
+      setWildPkmApeares(true);
+    }
   });
+
+  const checkForResults = () => {
+    return showResults ? true : false;
+  }
 
   return (
     <section className='fighting-area-section'>
       <button onClick={() => navigate(`/`)}>Choose an other Pokemon</button>
-      <div className="fighting-area-container">
-        {currPkm ? (<PokemonDetail pokemon={currPkm} />) : <h2>Couldn't find your Pokemon!</h2>}
-        {(fightStartet && rdmPkm) ?? <PokemonDetail pokemon={rdmPkm} />}
-      </div>
-      <button onClick={handleFightStartet}>Start fight</button>
+      {checkForResults() ? (<h2>Results Placeholder</h2>
+      ) : (
+        <div className="fighting-area-container">
+          {currPkm && <PokemonDetail pokemon={currPkm} />}
+          {showAnimation && <h2>Animation Placeholder</h2>}
+          {wildPkmApeares && <PokemonDetail pokemon={rdmPkm} />}
+        </div>)}
+      <button disabled={wildPkmApeares === true} onClick={handleWildPkmApeares}>Start fight</button>
     </section>
   )
 }
