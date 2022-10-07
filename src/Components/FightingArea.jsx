@@ -89,13 +89,14 @@ function FightingArea() {
   return (
     <section className='fighting-area-section'>
       <button onClick={() => navigate(`/`)}>Choose an other Pokemon</button>
-      {checkForResults() ? (<PokemonDetail pokemon={winningPkm} />
-      ) : (
-        <div className="fighting-area-container">
-          {currPkm && <PokemonDetail pokemon={currPkm} />}
-          {showAnimation && <FightAnimation setShowAnimation={setShowAnimation} />}
-          {wildPkmApeares && <PokemonDetail pokemon={rdmPkm} />}
-        </div>)}
+      <div className="fighting-area-container">
+        {checkForResults() ? (<PokemonDetail pokemon={winningPkm} />
+        ) : (
+          <>        {currPkm && <PokemonDetail pokemon={currPkm} />}
+            {showAnimation && <FightAnimation setShowAnimation={setShowAnimation} />}
+            {wildPkmApeares && <PokemonDetail pokemon={rdmPkm} />}</>
+        )}
+      </div>
       <button disabled={wildPkmApeares === true} onClick={handleWildPkmApeares}>Start fight</button>
     </section>
   )
