@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 function useApi() {
   const [allPokemon, setAllPokemon] = useState([]);
 
-  const API = "http://localhost:8080/pokemon";
+  const API = "https://pokefight-dataserver.onrender.com/pokemon";
 
   const getAllPokemon = async () => {
     try {
